@@ -5,11 +5,13 @@ import MainUsers from "../components/containers/MainUsers";
 
 function Users() {
 	return (
-		<main>
+		<>
 			<Header />
-			<MainUsers />
+			<main className="main bg-dark">
+				<MainUsers />
+			</main>
 			<Footer />
-		</main>
+		</>
 	);
 }
 

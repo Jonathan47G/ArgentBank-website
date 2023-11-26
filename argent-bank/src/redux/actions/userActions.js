@@ -14,7 +14,7 @@ export const fetchUserData = (token) => async (dispatch) => {
       const userData = await response.json();
   
       if (response.ok) {
-        dispatch(loginSuccess({ user: userData.body }));
+        dispatch(loginSuccess({ user: userData.body, token: token }));
       } else {
         dispatch(loginFailure(userData.error));
         throw new Error(userData.error);

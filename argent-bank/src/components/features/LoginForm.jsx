@@ -14,7 +14,7 @@ const LoginForm = ({ loginUser }) => {
         loginUser({ email, password })
           .then(() => {
             // Redirige l'utilisateur vers User.jsx
-            navigate("/Users");
+            navigate("/profile");
           })
           .catch((error) => {
             // Gère les erreurs, affiche des messages d'erreur, etc.

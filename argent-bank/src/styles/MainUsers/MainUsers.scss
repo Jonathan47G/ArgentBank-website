@@ -1,19 +1,32 @@
-.input-wrapper {
+  .user-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-bottom: 1rem;
+    justify-content: center;
+    .input-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-align: left;
+      margin-bottom: 1rem;
+      width: 100%;
+      label {
+        font-weight: bold;
+      }
+      input {
+        padding: 5px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        width: 8%;
+      }
+      input:read-only {
+        background-color: silver;
+      }
+    }
+    
   }
-  
-  .input-wrapper label {
-    font-weight: bold;
-  }
-  
-  .input-wrapper input {
-    padding: 5px;
-    font-size: 1.2rem;
-  }
-
 
 .account {
     display: flex;
@@ -51,7 +64,17 @@
     width: 100%;
     flex: 1;
   }
-  
+  .button-user-edit {
+    display: flex;
+    gap : 10px;
+    justify-content: center;
+    .edit-button {
+      font-size: 1.2em;
+      font-weight: 500;
+      
+      width: 5%;
+    }
+  }
   .edit-button {
     border-color: #00bc77;
     background-color: #00bc77;
@@ -76,6 +99,7 @@
     background-color: #00bc77;
     color: #fff;
   }
+
   
   @media (min-width: 720px) {
     .account {

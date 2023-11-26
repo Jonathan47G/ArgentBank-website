@@ -5,16 +5,19 @@ html {
   text-align: center;
   color: #2c3e50;
 }
-html body {
+html #root {
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-html body .main {
+html #root main {
+  display: block;
+}
+html #root .main {
   flex: 1;
 }
-html body .bg-dark {
+html #root .bg-dark {
   background-color: #12002b;
 }
 html .sr-only {

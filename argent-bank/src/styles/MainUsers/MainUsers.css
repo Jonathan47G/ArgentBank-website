@@ -1,17 +1,33 @@
-.input-wrapper {
+.user-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+.user-wrapper .input-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   text-align: left;
   margin-bottom: 1rem;
+  width: 100%;
 }
-
-.input-wrapper label {
+.user-wrapper .input-wrapper label {
   font-weight: bold;
 }
-
-.input-wrapper input {
+.user-wrapper .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
+  border-radius: 5px;
+  width: 8%;
+}
+.user-wrapper .input-wrapper input:-moz-read-only {
+  background-color: silver;
+}
+.user-wrapper .input-wrapper input:read-only {
+  background-color: silver;
 }
 
 .account {
@@ -49,6 +65,17 @@
 .account-content-wrapper {
   width: 100%;
   flex: 1;
+}
+
+.button-user-edit {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.button-user-edit .edit-button {
+  font-size: 1.2em;
+  font-weight: 500;
+  width: 5%;
 }
 
 .edit-button {

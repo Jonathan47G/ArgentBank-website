@@ -4,7 +4,6 @@ import { loginRequest, loginSuccess, loginFailure } from '../actions/authActions
 const initialState = {
   isLoading: false,
   isAuthenticated: false,
-  rememberMe: false,
   token: null,
   user: null,
   error: null,
@@ -19,7 +18,6 @@ const authReducer = createReducer(initialState, (builder) => {
     .addCase(loginSuccess, (state, action) => {
       state.isLoading = false;
       state.isAuthenticated = true;
-      state.rememberMe = action.payload;
       state.token = action.payload.token;
       state.user = action.payload.user;
       state.error = null;

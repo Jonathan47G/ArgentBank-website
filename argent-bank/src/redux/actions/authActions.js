@@ -8,7 +8,7 @@ export const loginFailure = createAction("auth/loginFailure");
 export const setRememberMe = createAction('auth/setRememberMe');
 
 export const loginUser =
-	({ email, password, rememberMe }) =>
+	({ email, password }) =>
 	async (dispatch) => {
 		dispatch(loginRequest());
 
@@ -25,9 +25,7 @@ export const loginUser =
 
 			if (response.ok) {
 				const token = data.body.token;
-				dispatch(loginSuccess({ token }));
 				await dispatch(fetchUserData(token));
-				return token;
 			} else {
 				dispatch(loginFailure(data.error));
 				throw new Error(data.error);
