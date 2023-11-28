@@ -5,6 +5,7 @@ import { fetchUserData } from "./userActions";
 export const loginRequest = createAction("auth/loginRequest");
 export const loginSuccess = createAction("auth/loginSuccess");
 export const loginFailure = createAction("auth/loginFailure");
+export const updateToken = createAction("auth/updateToken");
 export const setRememberMe = createAction('auth/setRememberMe');
 
 export const loginUser =
@@ -25,6 +26,7 @@ export const loginUser =
 
 			if (response.ok) {
 				const token = data.body.token;
+				dispatch(updateToken(token));
 				await dispatch(fetchUserData(token));
 			} else {
 				dispatch(loginFailure(data.error));
