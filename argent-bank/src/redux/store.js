@@ -4,8 +4,8 @@ import rootReducer from "./reducers";
 import { loginSuccess, updateToken } from "./actions/authActions";
 
 const initApp = () => {
-	const user = sessionStorage.getItem('user');
-	const token = sessionStorage.getItem('token');
+	const user = sessionStorage.getItem('user') || localStorage.getItem('user');
+	const token = sessionStorage.getItem('token') || localStorage.getItem('user');
   
 	if (user && token) {
 	  store.dispatch(loginSuccess({ user: JSON.parse(user), isLoading:false,isAuthenticated: true, error: null }), );
