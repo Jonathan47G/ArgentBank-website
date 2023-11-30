@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import LogoArgentBank from "../../assets/argentBankLogo.png"
-import "../../styles/Header/Header.css"
+import LogoArgentBank from "../../assets/argentBankLogo.webp"
+import "../../styles/Header/Header.min.css"
 import NavBar from "../features/NavBar";
 
 function Header() {

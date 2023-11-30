@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import "../../styles/MainUsers/MainUsers.css";
+import "../../styles/MainUsers/MainUsers.min.css";
 import RedirectionSiNonConnecte from "../features/RedirectionSiNonConnecte";
 import UserWrapper from "../features/Wrapper";
 
@@ -26,9 +26,10 @@ function MainUser() {
 				{!wrapperOpen && (
 					<>
 						<h1>
-							Welcome back
+							Welcome back {user.userName}
 							<br />
 							{user.firstName} {user.lastName}
+							
 						</h1>
 
 						<button onClick={basculeWrapper} className="edit-button">

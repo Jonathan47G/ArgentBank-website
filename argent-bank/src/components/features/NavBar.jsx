@@ -16,7 +16,7 @@ function NavBar() {
 		<div>
 			{estAuthentifie ? (
 				<>
-					<Link to="/profile" className="main-nav-item">
+					<Link to="/" className="main-nav-item">
 						<i className="fa fa-user-circle"></i>
 						{utilisateur ? utilisateur.userName : "User"}
 					</Link>

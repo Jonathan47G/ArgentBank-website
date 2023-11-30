@@ -1,6 +1,6 @@
 import { connect, useSelector } from "react-redux";
 import { loginUser } from "../../redux/actions/authActions";
-import "../../styles/MainSignIn/MainSignIn.css" 
+import "../../styles/MainSignIn/MainSignIn.min.css" 
 import LoginForm from "../features/LoginForm";
 import { Navigate } from "react-router";
 

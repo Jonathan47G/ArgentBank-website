@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { connect, useSelector } from "react-redux";
 import { loginUser } from "../../redux/actions/authActions";
 import { useNavigate } from "react-router-dom";
 import RememberMe from "./RememberMe";
@@ -8,6 +8,15 @@ const LoginForm = ({ loginUser }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
     const navigate = useNavigate();
+	const [errorMessage, setErrorMessage] = useState("");
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setErrorMessage("");
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, [errorMessage]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +28,7 @@ const LoginForm = ({ loginUser }) => {
           .catch((error) => {
             // Gère les erreurs, affiche des messages d'erreur, etc.
             console.log('echec', error);
+			setErrorMessage("Invalid email or password.");
           });
       };
 
@@ -31,6 +41,7 @@ const LoginForm = ({ loginUser }) => {
 					id="username"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
+					required
 				/>
 			</div>
 			<div className="input-wrapper">
@@ -40,8 +51,10 @@ const LoginForm = ({ loginUser }) => {
 					id="password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
+					required
 				/>
 			</div>
+			{errorMessage && <div className="error-message">{errorMessage}</div>}
 			<RememberMe />
 			<button className="sign-in-button" type="submit">
 				Sign In
