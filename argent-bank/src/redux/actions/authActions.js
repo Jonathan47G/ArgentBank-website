@@ -28,6 +28,7 @@ export const loginUser =
 				const token = data.body.token;
 				dispatch(updateToken(token));
 				await dispatch(fetchUserData(token));
+				
 			} else {
 				dispatch(loginFailure(data.error));
 				throw new Error(data.error);

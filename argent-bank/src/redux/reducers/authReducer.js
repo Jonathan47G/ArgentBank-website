@@ -20,10 +20,10 @@ const initialState = {
 const authReducer = createReducer(initialState, (builder) => {
 	builder
 		.addCase(updateToken, (state, action) => {
-			state.token = action.payload;
+			state.token = action.payload
 			state.rememberMe
-				? localStorage.setItem("user", JSON.stringify(action.payload.user))
-				: sessionStorage.setItem("token", JSON.stringify(action.payload));
+				? localStorage.setItem("token", action.payload)
+				: sessionStorage.setItem("token", action.payload);
 		})
 		.addCase(loginRequest, (state) => {
 			state.isLoading = true;
@@ -52,7 +52,7 @@ const authReducer = createReducer(initialState, (builder) => {
 			state.error = null;
 			state.rememberMe = false;
 			sessionStorage.clear();
-      localStorage.clear();
+			localStorage.clear();
 		})
 		.addCase(setRememberMe, (state, action) => {
 			state.rememberMe = action.payload;
