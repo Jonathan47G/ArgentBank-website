@@ -126,7 +126,7 @@ paths:
           description: User not found
         '500':
           description: Internal Server Error
-  /account/{accountId}/transactions:
+  /user/{id}/account/{accountId}/transactions:
     get:
       security:
         - Bearer: []
@@ -135,6 +135,11 @@ paths:
       summary: Get Account Transactions
       description: API for retrieving transactions for a specific account
       parameters:
+        - in: path
+          name: id
+          required: true
+          description: User ID
+          type: integer
         - in: path
           name: accountId
           required: true
@@ -151,7 +156,7 @@ paths:
           description: Account not found
         '500':
           description: Internal Server Error
-  /account/{accountId}/transactions/{transactionId}/details:
+  /user/{id}/account/{accountId}/transactions/{transactionId}/details:
     get:
       security:
         - Bearer: []
@@ -160,6 +165,11 @@ paths:
       summary: Get Transaction Details
       description: API for retrieving details of a specific transaction
       parameters:
+        - in: path
+          name: id
+          required: true
+          description: User ID
+          type: integer
         - in: path
           name: accountId
           required: true
@@ -187,6 +197,11 @@ paths:
       summary: Update Transaction Details
       description: API for updating details of a specific transaction
       parameters:
+        - in: path
+          name: id
+          required: true
+          description: User ID
+          type: integer
         - in: path
           name: accountId
           required: true
