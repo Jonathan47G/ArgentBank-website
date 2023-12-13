@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { loginUser } from "../../redux/actions/authActions";
 import { useNavigate } from "react-router-dom";
 import RememberMe from "./RememberMe";
@@ -22,11 +22,9 @@ const LoginForm = ({ loginUser }) => {
         e.preventDefault();
         loginUser({ email, password })
           .then(() => {
-            // Redirige l'utilisateur vers User.jsx
             navigate("/profile");
           })
           .catch((error) => {
-            // Gère les erreurs, affiche des messages d'erreur, etc.
             console.log('echec', error);
 			setErrorMessage("Invalid email or password.");
           });
